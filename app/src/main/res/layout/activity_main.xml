@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_page_gradient"
+                tools:context=".MainActivity">
+
+    <LinearLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageButton
+                    android:id="@+id/lemon_button"
+                    android:layout_width="87dp"
+                    android:layout_height="84dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="100dp"
+                    android:alpha="1"
+                    android:background="#00FFFFFF"
+                    android:baselineAlignBottom="false"
+                    android:contentDescription="@string/home_button"
+                    android:cropToPadding="false"
+                    android:scaleType="center"
+                    app:layout_constraintEnd_toStartOf="@+id/settings_button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/lemon_icon_foreground" />
+
+            <ImageButton
+                    android:id="@+id/settings_button"
+                    android:layout_width="60dp"
+                    android:layout_height="59dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="#00FFFFFF"
+                    android:contentDescription="@string/settings"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/settings_button_foreground" />
+
+            <ImageButton
+                    android:id="@+id/location_button"
+                    android:layout_width="64dp"
+                    android:layout_height="77dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#00FFFFFF"
+                    android:contentDescription="@string/location"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/locations_button_foreground" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <ScrollView
+            android:id="@+id/main_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_bar"
+            android:focusable="false"
+            android:visibility="visible">
+
+        <LinearLayout
+                android:id="@+id/main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:baselineAligned="false">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                <TextView
+                        android:id="@+id/location_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Cambridge"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:id="@+id/current_temperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="20°"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="96sp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:id="@+id/current_weather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Sunny"
+                        android:textAlignment="center"
+                        android:textColor="#E1E1E1"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:id="@+id/high_low_conditions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="H: 20°  L: 14°"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:typeface="normal" />
+            </LinearLayout>
+
+            <!-- Hourly Forecast -->
+            <LinearLayout
+                    android:id="@+id/hourly_forecast_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_corner"
+                    android:padding="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp">
+
+                <LinearLayout
+                        android:id="@+id/hourly_forecast_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Air Quality -->
+            <LinearLayout
+                    android:id="@+id/air_quality_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_corner"
+                    android:padding="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp">
+            </LinearLayout>
+
+            <!-- UV Index and Tree Pollen -->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:id="@+id/half_box1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/half_box2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="16dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Wind and Rainfall -->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp">
+
+                <LinearLayout
+                        android:id="@+id/half_box3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/half_box4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="16dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp">
+
+                <LinearLayout
+                        android:id="@+id/half_box5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/half_box6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="16dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp">
+
+                <LinearLayout
+                        android:id="@+id/half_box7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/half_box8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner"
+                        android:padding="16dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top" />
+
+</RelativeLayout>

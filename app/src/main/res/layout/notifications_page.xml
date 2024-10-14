@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/choose_feature"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_page_gradient"
+    android:fadingEdge="none"
+    android:visibility="visible"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="49dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/back_button"
+                    android:src="@drawable/baseline_arrow_back_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageButton
+                    android:id="@+id/settings_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#00FFFFFF"
+                    android:contentDescription="@string/settings"
+                    app:srcCompat="@mipmap/settings_button_foreground"/>
+
+            <TextView
+                    android:id="@+id/change_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+
+                    android:text="TextView"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    android:textStyle="bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/weather_feature_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_bar"
+        android:layout_marginTop="2dp"
+        android:focusable="false"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <TextView
+                    android:id="@+id/choose_features"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:text="TextView"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#00FFFFFF">
+
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                        <CheckBox
+                                android:id="@+id/checkBox_uv_index"
+                                android:layout_width="380dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:buttonTint="#FFFFFF"
+                                android:text="CheckBox"
+                                android:textAlignment="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"/>
+                        <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            <SeekBar
+                                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                                    android:layout_width="240dp"
+                                    android:max="9"
+                                    android:progress="4"
+                                    android:layout_height="29dp" android:id="@+id/seekBar_uv_index"/>
+                            <TextView
+                                    android:text="TextView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" android:id="@+id/seekBarIndicator_uv_index"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#00FFFFFF">
+
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                        <CheckBox
+                                android:id="@+id/checkBox_tree_pollen"
+                                android:layout_width="380dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:width="50dp"
+                                android:height="30dp"
+                                android:buttonTint="#FFFFFF"
+                                android:text="CheckBox"
+                                android:textAlignment="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"/>
+                        <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            <SeekBar
+                                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                                    android:layout_width="240dp"
+                                    android:layout_height="29dp"
+                                    android:max="2"
+                                    android:progress="1"
+                                    android:id="@+id/seekBar_tree_pollen"/>
+                            <TextView
+                                    android:text="TextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent" android:id="@+id/seekBarIndicator_tree_pollen"
+                                    android:layout_weight="1"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#00FFFFFF">
+
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                        <CheckBox
+                                android:id="@+id/checkBox_grass_pollen"
+                                android:layout_width="380dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:buttonTint="#FFFFFF"
+                                android:text="CheckBox"
+                                android:textAlignment="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"/>
+                        <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            <SeekBar
+                                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                                    android:layout_width="240dp"
+                                    android:layout_height="29dp"
+                                    android:max="2"
+                                    android:progress="1"
+                                    android:id="@+id/seekBar_grass_pollen"/>
+                            <TextView
+                                    android:text="TextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent" android:id="@+id/seekBarIndicator_grass_pollen"
+                                    android:layout_weight="1"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
